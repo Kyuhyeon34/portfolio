@@ -5,319 +5,513 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>이규현 · Embedded SW Portfolio</title>
 <meta name="description" content="하드웨어를 이해하고, 소프트웨어로 완성하는 임베디드 SW 개발자 이규현의 포트폴리오">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#f6f5f2;--card:#fff;--ink:#16181d;--sub:#5b6170;--line:#e4e2dc;--dark:#1d1f24;--accent:#0e7c6b;--accent-soft:#e3f2ef}
+:root{
+ --bg:#f6f5f1;--paper:#fff;--mat:#ecebe6;--ink:#121418;--sub:#5e636d;--faint:#8b9098;--line:#e2dfd7;
+ --accent:#0e7c6b;--accent-soft:#e2f1ed;
+ --mono:'JetBrains Mono',ui-monospace,monospace;
+ --radius:16px;
+}
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--ink);font-family:'Noto Sans KR',system-ui,sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{background:var(--bg);color:var(--ink);font-family:'Pretendard',system-ui,-apple-system,sans-serif;line-height:1.7;letter-spacing:-.005em;-webkit-font-smoothing:antialiased;word-break:keep-all}
 a{color:inherit}
-.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
-nav{position:sticky;top:0;z-index:10;background:rgba(246,245,242,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-nav .wrap{display:flex;align-items:center;justify-content:space-between;height:56px}
-nav b{font-weight:900;letter-spacing:-.02em}
-nav ul{display:flex;gap:22px;list-style:none;font-size:14px;color:var(--sub)}
-nav a{text-decoration:none}nav a:hover{color:var(--accent)}
-.eyebrow{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
-header{padding:88px 0 56px}
-header h1{font-size:clamp(40px,7vw,64px);font-weight:900;letter-spacing:-.03em;line-height:1.1;margin:14px 0 18px}
-header p.lead{font-size:clamp(18px,2.4vw,22px);color:var(--sub);max-width:640px}
-.keys{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:40px}
-.key{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px}
-.key small{font-family:'JetBrains Mono',monospace;color:var(--accent);font-size:11px;letter-spacing:.1em}
-.key h3{font-size:18px;margin:4px 0 6px}
-.key p{font-size:14px;color:var(--sub)}
-.links{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
-.btn{display:inline-flex;align-items:center;gap:6px;padding:10px 16px;border-radius:999px;border:1px solid var(--line);background:var(--card);font-size:14px;font-weight:500;text-decoration:none}
-.btn.dark{background:var(--dark);color:#fff;border-color:var(--dark)}
-section{padding:64px 0;border-top:1px solid var(--line)}
-section>.wrap>h2{font-size:32px;font-weight:900;letter-spacing:-.02em;margin:8px 0 28px}
-.profile{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
-.box{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px}
-.box h3{font-size:15px;margin-bottom:10px}
-.box ul{list-style:none;font-size:14px}
-.box li{display:flex;gap:12px;padding:6px 0;border-bottom:1px dashed var(--line)}
-.box li:last-child{border:0}
-.box li span:first-child{min-width:150px;color:var(--sub);font-family:'JetBrains Mono',monospace;font-size:12.5px;padding-top:2px}
-.proj{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;margin-bottom:28px}
-.proj-head{display:grid;grid-template-columns:1.05fr 1fr;gap:0}
-.proj-head .txt{padding:30px}
-.proj-head .num{font-family:'JetBrains Mono',monospace;color:var(--accent);font-size:13px}
-.proj-head h3{font-size:24px;font-weight:900;letter-spacing:-.02em;line-height:1.35;margin:6px 0 10px}
-.proj-head p.sum{color:var(--sub);font-size:15px}
-.meta{margin-top:16px;font-size:13.5px}
-.meta div{display:flex;gap:12px;padding:5px 0;border-top:1px solid var(--line)}
-.meta b{min-width:44px;color:var(--sub);font-weight:500}
-.shots{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--line)}
-.shots img{width:100%;height:100%;object-fit:cover;display:block;aspect-ratio:4/3;background:#fff}
-.shots.one{grid-template-columns:1fr}.shots.one img{aspect-ratio:16/10}
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;padding:0 30px 24px}
-.stat{background:var(--dark);color:#fff;border-radius:12px;padding:16px 18px}
-.stat small{font-size:12px;color:#aab}
-.stat b{display:block;font-size:26px;font-weight:900;letter-spacing:-.02em;margin-top:2px}
-.stat span{font-size:12px;color:#aab}
-details{border-top:1px solid var(--line)}
-summary{cursor:pointer;list-style:none;padding:16px 30px;font-weight:700;font-size:15px;display:flex;justify-content:space-between}
+img{display:block;max-width:100%}
+.wrap{max-width:1120px;margin:0 auto;padding:0 32px}
+.mono{font-family:var(--mono)}
+.eyebrow{font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
+
+/* nav */
+nav{position:sticky;top:0;z-index:20;background:rgba(246,245,241,.86);backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid transparent;transition:border-color .2s}
+nav.scrolled{border-bottom-color:var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+nav .brand{font-weight:800;font-size:16px;text-decoration:none;letter-spacing:-.02em}
+nav .brand span{color:var(--accent)}
+nav ul{display:flex;gap:28px;list-style:none;font-size:14px;color:var(--sub)}
+nav ul a{text-decoration:none;transition:color .15s}
+nav ul a:hover,nav ul a.on{color:var(--ink)}
+
+/* hero */
+.hero{padding:112px 0 96px}
+.hero-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:56px;align-items:end}
+.hero h1{font-size:clamp(56px,9vw,104px);font-weight:800;letter-spacing:-.05em;line-height:1;margin:22px 0 26px}
+.hero .lead{font-size:clamp(19px,2.2vw,24px);font-weight:500;color:var(--ink);line-height:1.5;max-width:560px}
+.hero .lead em{font-style:normal;color:var(--accent)}
+.facts{list-style:none;border-top:1px solid var(--ink)}
+.facts li{display:grid;grid-template-columns:84px 1fr;gap:12px;padding:13px 0;border-bottom:1px solid var(--line);font-size:14.5px}
+.facts li span:first-child{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;color:var(--faint);padding-top:3px;text-transform:uppercase}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:36px}
+.btn{display:inline-flex;align-items:center;gap:8px;height:44px;padding:0 20px;border-radius:999px;border:1px solid var(--line);background:var(--paper);font-size:14px;font-weight:600;text-decoration:none;transition:transform .15s,border-color .15s}
+.btn:hover{transform:translateY(-1px);border-color:var(--ink)}
+.btn.dark{background:var(--ink);color:#fff;border-color:var(--ink)}
+.btn svg{width:16px;height:16px}
+.principles{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-top:88px}
+.principle{border-top:1px solid var(--ink);padding-top:18px}
+.principle .no{font-family:var(--mono);font-size:12px;color:var(--accent);font-weight:600}
+.principle h3{font-size:19px;font-weight:700;letter-spacing:-.02em;margin:10px 0 8px}
+.principle p{font-size:14.5px;color:var(--sub)}
+
+/* section */
+section{padding:112px 0;border-top:1px solid var(--line)}
+.sec-head{display:grid;grid-template-columns:1fr 2fr;gap:56px;margin-bottom:56px;align-items:end}
+.sec-head h2{font-size:clamp(34px,4.4vw,48px);font-weight:800;letter-spacing:-.04em;line-height:1.1;margin-top:12px}
+.sec-head p{color:var(--sub);font-size:16px;max-width:520px}
+
+/* profile */
+.profile{display:grid;grid-template-columns:1fr 1fr;gap:56px 64px}
+.col h3{font-size:13px;font-family:var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--faint);font-weight:600;padding-bottom:14px;border-bottom:1px solid var(--ink)}
+.rows{list-style:none}
+.rows li{display:grid;grid-template-columns:150px 1fr;gap:16px;padding:16px 0;border-bottom:1px solid var(--line);font-size:15px}
+.rows li>span:first-child{font-family:var(--mono);font-size:12.5px;color:var(--sub);padding-top:3px}
+.rows li b{font-weight:700}
+.rows li small{display:block;color:var(--sub);font-size:13.5px}
+.col.full{grid-column:1/-1}
+.skills{display:grid;grid-template-columns:1fr 1fr;column-gap:64px}
+
+/* project case */
+.case{padding:72px 0;border-top:1px solid var(--line)}
+.case:first-of-type{border-top:0;padding-top:0}
+.case-head{display:grid;grid-template-columns:120px 1fr;gap:24px;align-items:start}
+.case-no{font-family:var(--mono);font-size:56px;font-weight:600;line-height:.9;color:var(--accent);letter-spacing:-.04em}
+.case-tag{font-size:13px;font-weight:600;color:var(--sub);margin-bottom:8px}
+.case h3{font-size:clamp(26px,3.2vw,36px);font-weight:800;letter-spacing:-.035em;line-height:1.25}
+.case .sum{font-size:17px;color:var(--sub);margin-top:12px;max-width:720px}
+.case-body{margin-left:144px}
+.meta{display:grid;grid-template-columns:.8fr 1.3fr 1.2fr;gap:24px;margin:32px 0 36px;padding:20px 0;border-top:1px solid var(--ink);border-bottom:1px solid var(--line)}
+.meta dt{font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);margin-bottom:6px}
+.meta dd{font-size:14.5px;line-height:1.6}
+
+/* gallery / frames */
+.gallery{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.gallery.single{grid-template-columns:1fr}
+.frame{margin:0}
+.frame button{display:block;width:100%;border:0;padding:0;background:var(--mat);border-radius:var(--radius);overflow:hidden;cursor:zoom-in;aspect-ratio:4/3;position:relative}
+.gallery.single .frame button{aspect-ratio:21/9}
+.frame img{width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.frame.fit img{object-fit:contain;padding:22px}
+.frame button:hover img{transform:scale(1.025)}
+.frame button::after{content:'';position:absolute;inset:0;border-radius:inherit;box-shadow:inset 0 0 0 1px rgba(18,20,24,.06);pointer-events:none}
+.frame figcaption{font-size:13px;color:var(--sub);margin-top:10px;display:flex;gap:8px}
+.frame figcaption::before{content:attr(data-n);font-family:var(--mono);font-size:11.5px;color:var(--accent);padding-top:2px}
+
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(3,1fr);margin-top:40px;border-top:1px solid var(--line)}
+.stat{padding:22px 24px 4px 0}
+.stat+.stat{padding-left:24px;border-left:1px solid var(--line)}
+.stat small{display:block;font-size:13px;color:var(--sub)}
+.stat b{display:block;font-size:clamp(28px,3.4vw,40px);font-weight:800;letter-spacing:-.04em;line-height:1.15;margin:6px 0 4px}
+.stat span{font-size:12.5px;color:var(--faint);font-family:var(--mono)}
+
+/* details */
+details{margin-top:36px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+summary{cursor:pointer;list-style:none;padding:18px 0;font-weight:700;font-size:15px;display:flex;justify-content:space-between;align-items:center}
 summary::-webkit-details-marker{display:none}
-summary::after{content:'+';color:var(--accent);font-size:20px;line-height:1}
-details[open] summary::after{content:'−'}
-.detail{padding:0 30px 28px;display:grid;grid-template-columns:1fr 1fr;gap:22px}
-.detail h4{font-size:14px;color:var(--accent);margin:4px 0 8px}
-.detail ul{padding-left:18px;font-size:14px;color:#2b2f38}
-.detail li{margin-bottom:6px}
-.detail figure{grid-column:1/-1}
-.detail figure img{width:100%;border:1px solid var(--line);border-radius:10px;display:block}
-.detail figcaption{font-size:12.5px;color:var(--sub);margin-top:6px;text-align:center}
-.prob{background:var(--accent-soft);border-radius:12px;padding:16px 18px;font-size:14px}
-.prob p{margin-bottom:4px}.prob b{color:var(--accent)}
-.foot{padding:16px 30px 24px;display:flex;gap:10px;flex-wrap:wrap}
-.more{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
-.mini{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden}
-.mini img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;border-bottom:1px solid var(--line)}
-.mini div{padding:18px 20px}
-.mini h3{font-size:17px;margin:4px 0 6px}
-.mini p{font-size:14px;color:var(--sub)}
-footer{padding:48px 0 64px;border-top:1px solid var(--line);color:var(--sub);font-size:14px}
-@media (max-width:820px){
+summary .ic{width:28px;height:28px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;transition:transform .25s,background .2s}
+summary .ic::before{content:'+';font-size:17px;line-height:1;color:var(--accent)}
+details[open] summary .ic{transform:rotate(45deg);background:var(--accent-soft)}
+summary:hover .ic{border-color:var(--accent)}
+.detail{padding:4px 0 36px;display:grid;grid-template-columns:1fr 1fr;gap:28px 40px}
+.detail h4{font-size:13px;font-family:var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+.detail ul{list-style:none;font-size:14.5px;color:#2b2f38}
+.detail ul li{position:relative;padding-left:16px;margin-bottom:9px}
+.detail ul li::before{content:'';position:absolute;left:0;top:.72em;width:6px;height:1px;background:var(--ink)}
+.prob{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:22px 24px;font-size:14.5px}
+.prob p{display:grid;grid-template-columns:64px 1fr;gap:8px;padding:8px 0}
+.prob p+p{border-top:1px dashed var(--line)}
+.prob b{font-family:var(--mono);font-size:12px;color:var(--accent);padding-top:2px}
+.detail .frame{grid-column:1/-1}
+.detail .frame button{aspect-ratio:auto;background:var(--paper);border:1px solid var(--line)}
+.detail .frame img{height:auto;object-fit:contain;padding:20px}
+.foot{margin-top:28px;display:flex;gap:10px;flex-wrap:wrap}
+
+/* more */
+.more{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.mini{display:block;text-decoration:none;color:inherit}
+.mini .frame button{aspect-ratio:16/10}
+.mini h3{font-size:21px;font-weight:800;letter-spacing:-.03em;margin:18px 0 6px}
+.mini p{font-size:14.5px;color:var(--sub)}
+.mini .go{display:inline-flex;gap:6px;margin-top:12px;font-size:13.5px;font-weight:600;color:var(--accent);text-decoration:none}
+.mini .go:hover{text-decoration:underline}
+
+/* footer */
+footer{background:var(--ink);color:#e9eaec;padding:96px 0 56px}
+footer h2{font-size:clamp(32px,5vw,56px);font-weight:800;letter-spacing:-.045em;line-height:1.15;max-width:760px}
+footer h2 em{font-style:normal;color:#6fd3bf}
+footer .cta .btn{background:transparent;color:#fff;border-color:#3a3d44}
+footer .cta .btn:hover{border-color:#fff}
+footer .cta .btn.dark{background:#fff;color:var(--ink);border-color:#fff}
+footer .bottom{margin-top:72px;padding-top:20px;border-top:1px solid #2c2f35;display:flex;justify-content:space-between;font-size:13px;color:#8b9098;font-family:var(--mono)}
+
+/* lightbox */
+dialog.lb{border:0;padding:0;background:transparent;max-width:min(92vw,1400px);max-height:92vh;margin:auto}
+dialog.lb::backdrop{background:rgba(12,13,16,.86);backdrop-filter:blur(4px)}
+dialog.lb img{max-width:min(92vw,1400px);max-height:84vh;border-radius:12px;background:#fff;object-fit:contain}
+dialog.lb p{color:#d7d9dd;font-size:14px;text-align:center;margin-top:12px}
+dialog.lb button{position:fixed;top:18px;right:22px;width:44px;height:44px;border-radius:50%;border:1px solid #444;background:#1b1d21;color:#fff;font-size:22px;cursor:pointer}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+
+@media (max-width:900px){
+ .wrap{padding:0 20px}
+ nav ul{gap:18px}
+ .hero{padding:72px 0 64px}
+ .hero-grid,.sec-head,.profile,.skills{grid-template-columns:1fr;gap:32px}
+ .principles{grid-template-columns:1fr;gap:28px;margin-top:56px}
+ section{padding:80px 0}
+ .sec-head{margin-bottom:36px}
+ .case{padding:56px 0}
+ .case-head{grid-template-columns:1fr;gap:10px}
+ .case-no{font-size:40px}
+ .case-body{margin-left:0}
+ .meta{grid-template-columns:1fr;gap:14px}
+ .gallery,.more,.detail{grid-template-columns:1fr}
+ .gallery.single .frame button{aspect-ratio:16/10}
+ .rows li{grid-template-columns:1fr;gap:2px}
+}
+@media (max-width:560px){
  nav ul{display:none}
- .keys,.profile,.more{grid-template-columns:1fr}
- .proj-head{grid-template-columns:1fr}
- .proj-head .shots{order:-1}
- .stats{grid-template-columns:1fr 1fr;padding:0 20px 20px}
- .proj-head .txt,summary,.detail,.foot{padding-left:20px;padding-right:20px}
- .detail{grid-template-columns:1fr}
- .box li{flex-direction:column;gap:0}
+ .stats{grid-template-columns:1fr}
+ .stat,.stat+.stat{padding:16px 0;border-left:0;border-bottom:1px solid var(--line)}
+ .prob p{grid-template-columns:1fr;gap:2px}
+ footer .bottom{flex-direction:column;gap:6px}
 }
 </style>
 </head>
 <body>
-<nav><div class="wrap"><b>이규현</b><ul><li><a href="#profile">Profile</a></li><li><a href="#projects">Projects</a></li><li><a href="#more">More</a></li><li><a href="#contact">Contact</a></li></ul></div></nav>
+<nav id="nav"><div class="wrap">
+ <a class="brand" href="#top">이규현<span>.</span></a>
+ <ul><li><a href="#profile">Profile</a></li><li><a href="#projects">Projects</a></li><li><a href="#more">More</a></li><li><a href="#contact">Contact</a></li></ul>
+</div></nav>
 
-<header><div class="wrap">
- <div class="eyebrow">Embedded SW Portfolio · 2026</div>
- <h1>이규현</h1>
- <p class="lead">하드웨어를 이해하고, 소프트웨어로 완성하는 임베디드 SW 개발자</p>
- <div class="keys">
-  <div class="key"><small>CONNECT</small><h3>끝까지 연결한다</h3><p>센서 → 펌웨어 → 통신 → 앱까지, 내 모듈이 다음 단계로 넘기는 데이터를 먼저 맞춥니다.</p></div>
-  <div class="key"><small>FAIL-SAFE</small><h3>안전한 쪽으로 설계한다</h3><p>판단할 수 없는 상태는 막힌 것으로 간주하는 상태머신으로 설계합니다.</p></div>
-  <div class="key"><small>ISOLATE</small><h3>원인을 좁혀 해결한다</h3><p>하드웨어 · 펌웨어 · 앱을 나눠 검증하고, 파형과 데이터로 원인을 확인합니다.</p></div>
+<header class="hero" id="top"><div class="wrap">
+ <div class="hero-grid">
+  <div>
+   <div class="eyebrow">Embedded SW Portfolio · 2026</div>
+   <h1>이규현</h1>
+   <p class="lead">하드웨어를 이해하고,<br><em>소프트웨어로 완성하는</em> 임베디드 SW 개발자</p>
+   <div class="cta">
+    <a class="btn dark" href="https://github.com/Kyuhyeon34" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38v-1.33c-2.23.48-2.7-1.07-2.7-1.07-.36-.92-.89-1.17-.89-1.17-.73-.5.06-.49.06-.49.8.06 1.23.83 1.23.83.72 1.22 1.87.87 2.33.66.07-.52.28-.87.5-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48v2.2c0 .21.15.46.55.38A8 8 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>GitHub</a>
+    <a class="btn" href="mailto:kyuhyeon34@gmail.com">kyuhyeon34@gmail.com</a>
+   </div>
+  </div>
+  <ul class="facts">
+   <li><span>Focus</span><span>MCU 펌웨어 · Linux 커널 드라이버 · Edge AI · FPGA</span></li>
+   <li><span>Now</span><span>대한상공회의소 AI 시스템반도체 SW개발자 과정</span></li>
+   <li><span>Edu</span><span>호서대학교 전자공학과 · 반도체공학 복수전공</span></li>
+   <li><span>Award</span><span>2025 반도체 역량강화 성과발표회 대상</span></li>
+  </ul>
  </div>
- <div class="links">
-  <a class="btn dark" href="https://github.com/Kyuhyeon34" target="_blank" rel="noopener">GitHub</a>
-  <a class="btn" href="mailto:kyuhyeon34@gmail.com">kyuhyeon34@gmail.com</a>
+ <div class="principles">
+  <div class="principle reveal"><div class="no">01 — CONNECT</div><h3>끝까지 연결한다</h3><p>센서 → 펌웨어 → 통신 → 앱까지, 내 모듈이 다음 단계로 넘기는 데이터를 먼저 맞춥니다.</p></div>
+  <div class="principle reveal"><div class="no">02 — FAIL-SAFE</div><h3>안전한 쪽으로 설계한다</h3><p>판단할 수 없는 상태는 막힌 것으로 간주하는 상태머신으로 설계합니다.</p></div>
+  <div class="principle reveal"><div class="no">03 — ISOLATE</div><h3>원인을 좁혀 해결한다</h3><p>하드웨어 · 펌웨어 · 앱을 나눠 검증하고, 파형과 데이터로 원인을 확인합니다.</p></div>
  </div>
 </div></header>
 
 <section id="profile"><div class="wrap">
- <div class="eyebrow">Profile</div><h2>학력 · 활동 · 기술</h2>
+ <div class="sec-head reveal">
+  <div><div class="eyebrow">Profile</div><h2>학력 · 활동 · 기술</h2></div>
+  <p>전자공학과 반도체공학을 함께 공부했고, 지금은 레지스터부터 커널 · 온디바이스 AI까지 직접 구현하며 임베디드 SW 역량을 쌓고 있습니다.</p>
+ </div>
  <div class="profile">
-  <div class="box"><h3>Education &amp; Activity</h3><ul>
-   <li><span>2026.02</span><span>호서대학교 전자공학과 졸업 · 반도체공학(패키지 공정) 복수전공</span></li>
-   <li><span>2024.03 ~ 2025.12</span><span>호서대학교 반도체특성화대학 (교육부 · 산업부 지원)</span></li>
-   <li><span>2026.05 ~ 2026.12</span><span>대한상공회의소 서울기술교육센터 AI 시스템반도체 SW개발자 과정</span></li>
+  <div class="col reveal"><h3>Education &amp; Activity</h3><ul class="rows">
+   <li><span>2026.02</span><span><b>호서대학교 전자공학과 졸업</b><small>반도체공학(패키지 공정) 복수전공</small></span></li>
+   <li><span>2024.03 – 2025.12</span><span><b>호서대학교 반도체특성화대학</b><small>교육부 · 산업부 지원</small></span></li>
+   <li><span>2026.05 – 2026.12</span><span><b>대한상공회의소 서울기술교육센터</b><small>AI 시스템반도체 SW개발자 과정</small></span></li>
   </ul></div>
-  <div class="box"><h3>Awards &amp; Certificates</h3><ul>
-   <li><span>2025.12</span><span>호서대학교 반도체 성과발표회 대상</span></li>
-   <li><span>2025.12</span><span>학습경험 우수사례 공모전 장려상</span></li>
-   <li><span>2026.10</span><span>TOEIC Speaking IH</span></li>
-   <li><span>2026.04</span><span>컴퓨터활용능력 2급</span></li>
+  <div class="col reveal"><h3>Awards &amp; Certificates</h3><ul class="rows">
+   <li><span>2025.12</span><span><b>반도체 성과발표회 대상</b><small>호서대학교</small></span></li>
+   <li><span>2025.12</span><span><b>학습경험 우수사례 공모전 장려상</b><small>호서대학교</small></span></li>
+   <li><span>2026.10</span><span><b>TOEIC Speaking IH</b></span></li>
+   <li><span>2026.04</span><span><b>컴퓨터활용능력 2급</b></span></li>
   </ul></div>
-  <div class="box" style="grid-column:1/-1"><h3>Skills</h3><ul>
-   <li><span>C / C++</span><span>레지스터 기반 MCU 펌웨어 및 리눅스 드라이버 구현</span></li>
-   <li><span>STM32 / ATmega128A</span><span>타이머 · PWM · ADC · UART · I2C 제어, 인터럽트 기반 설계</span></li>
-   <li><span>Linux Kernel</span><span>Device Tree 기반 GPIO · PWM · I2C 커널 드라이버</span></li>
-   <li><span>Jetson / OpenCV</span><span>YOLO 모델 TensorRT 변환 및 온디바이스 추론</span></li>
-   <li><span>Python / Qt</span><span>시리얼 통신 연동 GUI 및 데이터 처리 프로그램</span></li>
-   <li><span>FPGA / Verilog</span><span>FSM 기반 RTL 설계, 테스트벤치 · 타이밍 검증</span></li>
-  </ul></div>
+  <div class="col full reveal"><h3>Skills</h3><div class="skills">
+   <ul class="rows">
+    <li><span>C / C++</span><span>레지스터 기반 MCU 펌웨어 및 리눅스 드라이버 구현</span></li>
+    <li><span>STM32 / ATmega128A</span><span>타이머 · PWM · ADC · UART · I2C 제어, 인터럽트 기반 설계</span></li>
+    <li><span>Linux Kernel</span><span>Device Tree 기반 GPIO · PWM · I2C 커널 드라이버</span></li>
+   </ul>
+   <ul class="rows">
+    <li><span>Jetson / OpenCV</span><span>YOLO 모델 TensorRT 변환 및 온디바이스 추론</span></li>
+    <li><span>Python / Qt</span><span>시리얼 통신 연동 GUI 및 데이터 처리 프로그램</span></li>
+    <li><span>FPGA / Verilog</span><span>FSM 기반 RTL 설계, 테스트벤치 · 타이밍 검증</span></li>
+   </ul>
+  </div></div>
  </div>
 </div></section>
 
 <section id="projects"><div class="wrap">
- <div class="eyebrow">Projects</div><h2>주요 프로젝트</h2>
+ <div class="sec-head reveal">
+  <div><div class="eyebrow">Projects</div><h2>주요 프로젝트</h2></div>
+  <p>센서와 MCU부터 리눅스 커널, 온디바이스 AI, FPGA까지 — 직접 맡은 부분과 숫자로 확인한 결과를 중심으로 정리했습니다. 사진을 누르면 크게 볼 수 있습니다.</p>
+ </div>
 
  <!-- 01 -->
- <article class="proj">
-  <div class="proj-head">
-   <div class="txt">
-    <div class="num">01 · 산학프로젝트 (㈜천진)</div>
-    <h3>레이저 변위센서 기반 비접촉 곡률 측정 시스템</h3>
+ <article class="case">
+  <div class="case-head reveal">
+   <span class="case-no">01</span>
+   <div>
+    <p class="case-tag">산학프로젝트 · ㈜천진</p>
+    <h3>레이저 변위센서 기반<br>비접촉 곡률 측정 시스템</h3>
     <p class="sum">레이저 변위센서를 서보모터로 −30° ~ +30° 원호 스캔해 기판의 휨(Bow) · 곡률을 비접촉으로 측정합니다.</p>
-    <div class="meta">
-     <div><b>기간</b><span>2025.05 ~ 2025.12 · 6인 팀</span></div>
-     <div><b>역할</b><span>STM32 펌웨어 · 평탄도 · 곡률 계산 알고리즘, 연속 스캔 · 불량점 표시 제안</span></div>
-     <div><b>기술</b><span>C · STM32F411 · ADC · PWM · UART · Python(PyQt5)</span></div>
-    </div>
    </div>
-   <div class="shots"><img src="img/p1_1.jpg" alt="측정 장치" loading="lazy"><img src="img/p1_2.jpg" alt="GUI 측정 결과" loading="lazy"></div>
   </div>
-  <div class="stats">
-   <div class="stat"><small>반복 정밀도</small><b>0.03mm</b><span>목표 0.1mm</span></div>
-   <div class="stat"><small>ADC 분해능 (이론)</small><b>4.75μm</b><span>13.43μm에서 개선</span></div>
-   <div class="stat"><small>성과발표회</small><b>대상</b><span>2025 반도체 역량강화</span></div>
+  <div class="case-body">
+   <dl class="meta reveal">
+    <div><dt>Period</dt><dd>2025.05 – 2025.12<br>6인 팀</dd></div>
+    <div><dt>Role</dt><dd>STM32 펌웨어 · 평탄도 · 곡률 계산 알고리즘, 연속 스캔 · 불량점 표시 제안</dd></div>
+    <div><dt>Stack</dt><dd>C · STM32F411 · ADC · PWM · UART · Python(PyQt5)</dd></div>
+   </dl>
+   <div class="gallery reveal">
+    <figure class="frame"><button type="button"><img src="img/p1_1.jpg" alt="측정 장치" loading="lazy"></button><figcaption data-n="Fig.1">측정 장치</figcaption></figure>
+    <figure class="frame fit"><button type="button"><img src="img/p1_2.jpg" alt="GUI 측정 결과 그래프" loading="lazy"></button><figcaption data-n="Fig.2">GUI 측정 결과 — 0.05mm 초과 지점을 빨간 점으로 표시</figcaption></figure>
+   </div>
+   <div class="stats reveal">
+    <div class="stat"><small>반복 정밀도</small><b>0.03mm</b><span>target 0.1mm</span></div>
+    <div class="stat"><small>ADC 분해능 (이론)</small><b>4.75μm</b><span>from 13.43μm</span></div>
+    <div class="stat"><small>성과발표회</small><b>대상</b><span>2025 반도체 역량강화</span></div>
+   </div>
+   <details><summary>구조 · 문제 해결 자세히 보기<span class="ic"></span></summary><div class="detail">
+    <div><h4>Architecture</h4><ul>
+     <li>STM32는 서보 · ADC · 연산, PC는 시각화 · 판정으로 역할 분리</li>
+     <li>IDLE → HOMING → RUNNING → CALC 논블로킹 상태머신 (HAL_GetTick 기반)</li>
+     <li>모든 값을 μm 정수로 보내는 ASCII 프로토콜 — float printf 없이 동작</li>
+     <li>0.27° 간격 223점 연속 스캔, 이동평균 대비 0.05mm 초과 지점을 빨간 점으로 표시</li>
+    </ul></div>
+    <div class="prob"><p><b>문제</b><span>센서 출력(1~5V)을 ADC(0~3.3V)에 맞추며 ADC 한 단계가 13.43μm — 센서(4μm)보다 ADC가 병목</span></p><p><b>조치</b><span>측정 지점마다 ADC를 8회 읽어 평균하는 오버샘플링</span></p><p><b>결과</b><span>이론 분해능 4.75μm, 반복 정밀도 0.03mm</span></p></div>
+    <figure class="frame"><button type="button"><img src="img/p1_3.jpg" alt="시스템 구성" loading="lazy"></button><figcaption data-n="Fig.3">시스템 구성 — STM32 실시간 측정 · 연산, PC 시각화 · 판정</figcaption></figure>
+    <figure class="frame"><button type="button"><img src="img/p1_9.jpg" alt="반복 정밀도 표" loading="lazy"></button><figcaption data-n="Fig.4">샘플별 반복 정밀도 — 같은 위치를 반복 측정한 값의 표준편차</figcaption></figure>
+   </div></details>
+   <div class="foot"><a class="btn" href="https://github.com/Kyuhyeon34/Curvature_Measurement_System" target="_blank" rel="noopener">GitHub · 시연 영상 ↗</a></div>
   </div>
-  <details><summary>구조 · 문제 해결 자세히 보기</summary><div class="detail">
-   <div><h4>구조와 설계 의도</h4><ul>
-    <li>STM32는 서보 · ADC · 연산, PC는 시각화 · 판정으로 역할 분리</li>
-    <li>IDLE → HOMING → RUNNING → CALC 논블로킹 상태머신 (HAL_GetTick 기반)</li>
-    <li>모든 값을 μm 정수로 보내는 ASCII 프로토콜 — float printf 없이 동작</li>
-    <li>0.27° 간격 223점 연속 스캔, 이동평균 대비 0.05mm 초과 지점을 빨간 점으로 표시</li>
-   </ul></div>
-   <div class="prob"><p><b>문제</b> 센서 출력(1~5V)을 ADC(0~3.3V)에 맞추며 ADC 한 단계가 13.43μm — 센서(4μm)보다 ADC가 병목</p><p><b>조치</b> 측정 지점마다 ADC를 8회 읽어 평균하는 오버샘플링</p><p><b>결과</b> 이론 분해능 4.75μm, 반복 정밀도 0.03mm</p></div>
-   <figure><img src="img/p1_3.jpg" alt="시스템 구성" loading="lazy"><figcaption>시스템 구성 — STM32 실시간 측정 · 연산, PC 시각화 · 판정</figcaption></figure>
-   <figure><img src="img/p1_9.jpg" alt="반복 정밀도" loading="lazy"><figcaption>샘플별 반복 정밀도 — 같은 위치를 반복 측정한 값의 표준편차</figcaption></figure>
-  </div></details>
-  <div class="foot"><a class="btn" href="https://github.com/Kyuhyeon34/Curvature_Measurement_System" target="_blank" rel="noopener">GitHub · 시연 영상</a></div>
  </article>
 
  <!-- 02 -->
- <article class="proj">
-  <div class="proj-head">
-   <div class="txt">
-    <div class="num">02 · AI 시스템반도체 SW개발자 과정</div>
-    <h3>차량 감지 기반 스마트 주차 관제 시스템</h3>
+ <article class="case">
+  <div class="case-head reveal">
+   <span class="case-no">02</span>
+   <div>
+    <p class="case-tag">AI 시스템반도체 SW개발자 과정</p>
+    <h3>차량 감지 기반<br>스마트 주차 관제 시스템</h3>
     <p class="sum">초음파로 차량을 감지해 차단기를 자동 제어하고, 차량이 완전히 지나갈 때까지 차단기를 내리지 않습니다.</p>
-    <div class="meta">
-     <div><b>기간</b><span>2026.08.14 ~ 08.19 · 4인 팀</span></div>
-     <div><b>역할</b><span>STM32F411 베어메탈 펌웨어 · STM32 ↔ Qt 1차 통합 디버깅</span></div>
-     <div><b>기술</b><span>C · 레지스터 직접 제어 · TIM · EXTI · USART · Qt5</span></div>
-    </div>
    </div>
-   <div class="shots"><img src="img/p2_1.jpg" alt="하드웨어" loading="lazy"><img src="img/p2_2.jpg" alt="Qt 관제 화면" loading="lazy"></div>
   </div>
-  <div class="stats">
-   <div class="stat"><small>안전 테스트</small><b>전 항목 통과</b><span>장애물 시 열림 유지</span></div>
-   <div class="stat"><small>정상 개폐</small><b>4.18s</b><span>경로 비어 있을 때</span></div>
-   <div class="stat"><small>펌웨어 크기</small><b>5.0KB</b><span>HAL · RTOS 미사용</span></div>
+  <div class="case-body">
+   <dl class="meta reveal">
+    <div><dt>Period</dt><dd>2026.08.14 – 08.19<br>4인 팀</dd></div>
+    <div><dt>Role</dt><dd>STM32F411 베어메탈 펌웨어 · STM32 ↔ Qt 1차 통합 디버깅</dd></div>
+    <div><dt>Stack</dt><dd>C · 레지스터 직접 제어 · TIM · EXTI · USART · Qt5</dd></div>
+   </dl>
+   <div class="gallery reveal">
+    <figure class="frame"><button type="button"><img src="img/p2_1.jpg" alt="하드웨어" loading="lazy"></button><figcaption data-n="Fig.1">STM32 · 초음파 센서 · 차단기 모터 하드웨어</figcaption></figure>
+    <figure class="frame fit"><button type="button"><img src="img/p2_2.jpg" alt="Qt 관제 화면" loading="lazy"></button><figcaption data-n="Fig.2">Qt 관제 화면 — 카메라 · 감지 상태 · 주차 현황</figcaption></figure>
+   </div>
+   <div class="stats reveal">
+    <div class="stat"><small>안전 테스트</small><b>전 항목 통과</b><span>장애물 시 열림 유지</span></div>
+    <div class="stat"><small>정상 개폐</small><b>4.18s</b><span>경로 비어 있을 때</span></div>
+    <div class="stat"><small>펌웨어 크기</small><b>5.0KB</b><span>HAL · RTOS 미사용</span></div>
+   </div>
+   <details><summary>구조 · 문제 해결 자세히 보기<span class="ic"></span></summary><div class="detail">
+    <div><h4>Architecture</h4><ul>
+     <li>Handler → State Manager → Controller 3계층, 컨트롤러끼리 직접 호출하지 않음</li>
+     <li>‘모르면 막힌 것으로 간주’ — CLOSED → OPENING → HOLD → WAITING(최대 30초) → CLOSING</li>
+     <li>터미널에서 바로 읽히는 ASCII 라인 프로토콜 (PING · STATE? · GATE OPEN / EVT DETECT · EVT GATE DONE)</li>
+    </ul></div>
+    <div class="prob"><p><b>문제</b><span>초음파 자동 감지 경로에서만 Qt 진행창이 닫히지 않음</span></p><p><b>원인</b><span>시리얼 수신 슬롯 안에서 완료 응답을 동기식으로 기다려 다음 이벤트를 스스로 막음</span></p><p><b>조치</b><span>QTimer::singleShot(0)으로 이벤트 루프 분리, 타임아웃을 펌웨어 최악 시간에 맞춤</span></p></div>
+    <figure class="frame"><button type="button"><img src="img/p2_4.jpg" alt="차단기 상태머신" loading="lazy"></button><figcaption data-n="Fig.3">차단기 안전 상태머신 — WAITING 구간 통과 확인, 30초 초과 시 OBSTRUCTED 보고</figcaption></figure>
+   </div></details>
+   <div class="foot"><a class="btn" href="https://github.com/Kyuhyeon34/Parking_System" target="_blank" rel="noopener">GitHub · 시연 영상 ↗</a></div>
   </div>
-  <details><summary>구조 · 문제 해결 자세히 보기</summary><div class="detail">
-   <div><h4>구조와 설계 의도</h4><ul>
-    <li>Handler → State Manager → Controller 3계층, 컨트롤러끼리 직접 호출하지 않음</li>
-    <li>‘모르면 막힌 것으로 간주’ — CLOSED → OPENING → HOLD → WAITING(최대 30초) → CLOSING</li>
-    <li>터미널에서 바로 읽히는 ASCII 라인 프로토콜 (PING · STATE? · GATE OPEN / EVT DETECT · EVT GATE DONE)</li>
-   </ul></div>
-   <div class="prob"><p><b>문제</b> 초음파 자동 감지 경로에서만 Qt 진행창이 닫히지 않음</p><p><b>원인</b> 시리얼 수신 슬롯 안에서 완료 응답을 동기식으로 기다려 다음 이벤트를 스스로 막음</p><p><b>조치</b> QTimer::singleShot(0)으로 이벤트 루프 분리, 타임아웃을 펌웨어 최악 시간에 맞춤</p></div>
-   <figure><img src="img/p2_4.jpg" alt="차단기 상태머신" loading="lazy"><figcaption>차단기 안전 상태머신 — WAITING 구간 통과 확인, 30초 초과 시 OBSTRUCTED 보고</figcaption></figure>
-  </div></details>
-  <div class="foot"><a class="btn" href="https://github.com/Kyuhyeon34/Parking_System" target="_blank" rel="noopener">GitHub · 시연 영상</a></div>
  </article>
 
  <!-- 03 -->
- <article class="proj">
-  <div class="proj-head">
-   <div class="txt">
-    <div class="num">03 · AI 시스템반도체 SW개발자 과정</div>
-    <h3>AI 객체 인식 기반 무인 계산 POS</h3>
+ <article class="case">
+  <div class="case-head reveal">
+   <span class="case-no">03</span>
+   <div>
+    <p class="case-tag">AI 시스템반도체 SW개발자 과정</p>
+    <h3>AI 객체 인식 기반<br>무인 계산 POS</h3>
     <p class="sum">트레이 위 빵 12종을 Jetson에서 실시간 인식해 주문표를 자동으로 만듭니다.</p>
-    <div class="meta">
-     <div><b>기간</b><span>2026.09.07 ~ 09.16 · 4인 팀</span></div>
-     <div><b>역할</b><span>Jetson TensorRT 추론 서버 · POS 연동, WBF 앙상블, STM32 카메라 회전 제어</span></div>
-     <div><b>기술</b><span>Python · Jetson Orin Nano · TensorRT FP16 · YOLO11n · STM32</span></div>
-    </div>
    </div>
-   <div class="shots"><img src="img/p3_1.jpg" alt="회전 촬영 기구" loading="lazy"><img src="img/p3_2.jpg" alt="POS 화면" loading="lazy"></div>
   </div>
-  <div class="stats">
-   <div class="stat"><small>실전 테스트 120장</small><b>오인식 0건</b><span>빵 625개</span></div>
-   <div class="stat"><small>고난도 테스트 124장</small><b>38 → 20건</b><span>오류 47% 감소</span></div>
-   <div class="stat"><small>추론 시간</small><b>~80ms</b><span>앙상블 · 단독 약 40ms</span></div>
+  <div class="case-body">
+   <dl class="meta reveal">
+    <div><dt>Period</dt><dd>2026.09.07 – 09.16<br>4인 팀</dd></div>
+    <div><dt>Role</dt><dd>Jetson TensorRT 추론 서버 · POS 연동, WBF 앙상블, STM32 카메라 회전 제어</dd></div>
+    <div><dt>Stack</dt><dd>Python · Jetson Orin Nano · TensorRT FP16 · YOLO11n · STM32</dd></div>
+   </dl>
+   <div class="gallery reveal">
+    <figure class="frame fit"><button type="button"><img src="img/p3_1.jpg" alt="회전 촬영 기구" loading="lazy"></button><figcaption data-n="Fig.1">학습 데이터용 회전 촬영 기구</figcaption></figure>
+    <figure class="frame fit"><button type="button"><img src="img/p3_2.jpg" alt="POS 화면" loading="lazy"></button><figcaption data-n="Fig.2">POS 화면 — 인식 결과가 주문표로 바로 연결</figcaption></figure>
+   </div>
+   <div class="stats reveal">
+    <div class="stat"><small>실전 테스트 120장</small><b>오인식 0건</b><span>빵 625개</span></div>
+    <div class="stat"><small>고난도 테스트 124장</small><b>38 → 20건</b><span>오류 47% 감소</span></div>
+    <div class="stat"><small>추론 시간</small><b>~80ms</b><span>앙상블 · 단독 약 40ms</span></div>
+   </div>
+   <details><summary>구조 · 문제 해결 자세히 보기<span class="ic"></span></summary><div class="detail">
+    <div><h4>Architecture</h4><ul>
+     <li>mAP가 아니라 Jetson 실시간 오류 건수로 모델 선정 — YOLO11n(22건 vs 78건)</li>
+     <li>원본 · 90° 회전 증강 모델 2개를 커스텀 WBF로 병합, 두 모델이 합의한 박스만 신뢰도 가산</li>
+     <li>Jetson GPIO 스텝 주기가 흔들려 모터 제어를 STM32로 분리해 탈조 방지</li>
+    </ul></div>
+    <div class="prob"><p><b>문제</b><span>모양이 같고 색만 다른 비닐 포장 빵을 혼동 — 오류 38건</span></p><p><b>시도</b><span>2단계 분류 모델을 붙였다가 오류 56건으로 늘어 폐기</span></p><p><b>해결</b><span>틀린 사진부터 모아 원인 확인 → 라벨 수정 · 포장 사진 보강 · 앙상블로 20건</span></p></div>
+    <figure class="frame"><button type="button"><img src="img/p3_4.jpg" alt="다중 빵 인식" loading="lazy"></button><figcaption data-n="Fig.3">트레이 위 다중 빵 동시 인식</figcaption></figure>
+   </div></details>
+   <div class="foot"><a class="btn" href="https://github.com/Kyuhyeon34/AI_POS_System" target="_blank" rel="noopener">GitHub ↗</a></div>
   </div>
-  <details><summary>구조 · 문제 해결 자세히 보기</summary><div class="detail">
-   <div><h4>구조와 설계 의도</h4><ul>
-    <li>mAP가 아니라 Jetson 실시간 오류 건수로 모델 선정 — YOLO11n(22건 vs 78건)</li>
-    <li>원본 · 90° 회전 증강 모델 2개를 커스텀 WBF로 병합, 두 모델이 합의한 박스만 신뢰도 가산</li>
-    <li>Jetson GPIO 스텝 주기가 흔들려 모터 제어를 STM32로 분리해 탈조 방지</li>
-   </ul></div>
-   <div class="prob"><p><b>문제</b> 모양이 같고 색만 다른 비닐 포장 빵을 혼동 — 오류 38건</p><p><b>시행착오</b> 2단계 분류 모델을 붙였다가 오류 56건으로 늘어 폐기</p><p><b>해결</b> 틀린 사진부터 모아 원인 확인 → 라벨 수정 · 포장 사진 보강 · 앙상블로 20건</p></div>
-   <figure><img src="img/p3_4.jpg" alt="다중 빵 인식" loading="lazy"><figcaption>트레이 위 다중 빵 동시 인식(좌)과 합성 학습 데이터(우)</figcaption></figure>
-  </div></details>
-  <div class="foot"><a class="btn" href="https://github.com/Kyuhyeon34/AI_POS_System" target="_blank" rel="noopener">GitHub</a></div>
  </article>
 
  <!-- 04 -->
- <article class="proj">
-  <div class="proj-head">
-   <div class="txt">
-    <div class="num">04 · AI 시스템반도체 SW개발자 과정</div>
-    <h3>커널 드라이버 기반 온도 감시 · 냉각 제어</h3>
+ <article class="case">
+  <div class="case-head reveal">
+   <span class="case-no">04</span>
+   <div>
+    <p class="case-tag">AI 시스템반도체 SW개발자 과정</p>
+    <h3>커널 드라이버 기반<br>온도 감시 · 냉각 제어</h3>
     <p class="sum">Jetson Orin Nano의 온도 센서 · 팬 · 엔코더 · LED 바를 리눅스 커널 드라이버로 제어하는 스마트 선풍기입니다.</p>
-    <div class="meta">
-     <div><b>기간</b><span>2026.10.08 ~ 10.13 · 4인 팀</span></div>
-     <div><b>역할</b><span>LED 바 커널 드라이버 (GPIO 배열 · 커널 타이머 · ioctl / sysfs)</span></div>
-     <div><b>기술</b><span>C · Linux Kernel Module · Device Tree Overlay · spinlock</span></div>
-    </div>
    </div>
-   <div class="shots"><img src="img/p4_1.jpg" alt="실제 장치" loading="lazy"><img src="img/p4_2.jpg" alt="회로도" loading="lazy"></div>
   </div>
-  <div class="stats">
-   <div class="stat"><small>커널 드라이버</small><b>4종</b><span>BMP180 · 모터 · EC11 · LED 바</span></div>
-   <div class="stat"><small>동작 모드</small><b>3모드</b><span>WAIT · AUTO · MANUAL</span></div>
-   <div class="stat"><small>LED 애니메이션</small><b>3종</b><span>WAVE · BLINK · PROGRESS</span></div>
+  <div class="case-body">
+   <dl class="meta reveal">
+    <div><dt>Period</dt><dd>2026.10.08 – 10.13<br>4인 팀</dd></div>
+    <div><dt>Role</dt><dd>LED 바 커널 드라이버 (GPIO 배열 · 커널 타이머 · ioctl / sysfs)</dd></div>
+    <div><dt>Stack</dt><dd>C · Linux Kernel Module · Device Tree Overlay · spinlock</dd></div>
+   </dl>
+   <div class="gallery reveal">
+    <figure class="frame"><button type="button"><img src="img/p4_1.jpg" alt="실제 장치" loading="lazy"></button><figcaption data-n="Fig.1">Jetson Orin Nano · 팬 · LED 바 실제 장치</figcaption></figure>
+    <figure class="frame fit"><button type="button"><img src="img/p4_2.jpg" alt="회로도" loading="lazy"></button><figcaption data-n="Fig.2">회로도 — 센서 · 모터 드라이버 · 엔코더 · LED 바</figcaption></figure>
+   </div>
+   <div class="stats reveal">
+    <div class="stat"><small>커널 드라이버</small><b>4종</b><span>BMP180 · 모터 · EC11 · LED 바</span></div>
+    <div class="stat"><small>동작 모드</small><b>3모드</b><span>WAIT · AUTO · MANUAL</span></div>
+    <div class="stat"><small>LED 애니메이션</small><b>3종</b><span>WAVE · BLINK · PROGRESS</span></div>
+   </div>
+   <details><summary>구조 · 문제 해결 자세히 보기<span class="ic"></span></summary><div class="detail">
+    <div><h4>Architecture</h4><ul>
+     <li>핀 번호는 Device Tree Overlay에, 드라이버는 devm_* API로 자원 자동 해제</li>
+     <li>제어 정책은 사용자 앱, 장치 제어는 드라이버 — 앱은 IIO · ioctl · poll로만 접근</li>
+     <li>타이머 콜백과 ioctl · sysfs가 공유하는 상태는 spin_lock_irqsave로 보호</li>
+    </ul></div>
+    <div class="prob"><p><b>문제</b><span>GPIO에 값을 써도 LED가 켜지지 않음</span></p><p><b>원인</b><span>JetPack 6에서 헤더 핀이 tristate로 부팅</span></p><p><b>조치</b><span>pinconf-groups로 확인 후 jetson-io로 설정 · 경계 깜빡임은 ±0.2°C 히스테리시스</span></p></div>
+    <figure class="frame"><button type="button"><img src="img/p4_3.jpg" alt="시스템 구성" loading="lazy"></button><figcaption data-n="Fig.3">하드웨어 · 커널 드라이버 4종 · 사용자 앱 계층 구조</figcaption></figure>
+   </div></details>
+   <div class="foot"><a class="btn" href="https://github.com/Kyuhyeon34/Thermal_Fan_Driver" target="_blank" rel="noopener">GitHub · 시연 영상 ↗</a></div>
   </div>
-  <details><summary>구조 · 문제 해결 자세히 보기</summary><div class="detail">
-   <div><h4>구조와 설계 의도</h4><ul>
-    <li>핀 번호는 Device Tree Overlay에, 드라이버는 devm_* API로 자원 자동 해제</li>
-    <li>제어 정책은 사용자 앱, 장치 제어는 드라이버 — 앱은 IIO · ioctl · poll로만 접근</li>
-    <li>타이머 콜백과 ioctl · sysfs가 공유하는 상태는 spin_lock_irqsave로 보호</li>
-   </ul></div>
-   <div class="prob"><p><b>문제</b> GPIO에 값을 써도 LED가 켜지지 않음</p><p><b>원인</b> JetPack 6에서 헤더 핀이 tristate로 부팅</p><p><b>조치</b> pinconf-groups로 확인 후 jetson-io로 설정 · 경계 깜빡임은 ±0.2°C 히스테리시스</p></div>
-   <figure><img src="img/p4_3.jpg" alt="시스템 구성" loading="lazy"><figcaption>하드웨어 · 커널 드라이버 4종 · 사용자 앱 계층 구조</figcaption></figure>
-  </div></details>
-  <div class="foot"><a class="btn" href="https://github.com/Kyuhyeon34/Thermal_Fan_Driver" target="_blank" rel="noopener">GitHub · 시연 영상</a></div>
  </article>
 
  <!-- 05 -->
- <article class="proj">
-  <div class="proj-head">
-   <div class="txt">
-    <div class="num">05 · AI 시스템반도체 SW개발자 과정</div>
-    <h3>FPGA 2대 연동 I2C 센서 모니터링 시스템</h3>
+ <article class="case">
+  <div class="case-head reveal">
+   <span class="case-no">05</span>
+   <div>
+    <p class="case-tag">AI 시스템반도체 SW개발자 과정</p>
+    <h3>FPGA 2대 연동<br>I2C 센서 모니터링 시스템</h3>
     <p class="sum">Basys3 2대를 I2C로 연결해 Slave가 측정한 온도 · 습도 · 거리를 Master가 읽어 표시합니다.</p>
-    <div class="meta">
-     <div><b>기간</b><span>2026.11.03 ~ 11.06 · 2인 팀</span></div>
-     <div><b>역할</b><span>I2C Slave(0x42) · 스냅샷 레지스터 · DHT11 / HC-SR04 드라이버 · 테스트벤치</span></div>
-     <div><b>기술</b><span>Verilog · Vivado 2020.2 · Basys3 · I2C 100kHz</span></div>
-    </div>
    </div>
-   <div class="shots one"><img src="img/p5_1.jpg" alt="실물 동작" loading="lazy"></div>
   </div>
-  <div class="stats">
-   <div class="stat"><small>Slave 테스트벤치</small><b>18 / 18</b><span>항목 통과</span></div>
-   <div class="stat"><small>타이밍 여유</small><b>+3.1ns</b><span>WNS · 100MHz</span></div>
-   <div class="stat"><small>실측 SCL</small><b>99.86kHz</b><span>9바이트 응답 확인</span></div>
+  <div class="case-body">
+   <dl class="meta reveal">
+    <div><dt>Period</dt><dd>2026.11.03 – 11.06<br>2인 팀</dd></div>
+    <div><dt>Role</dt><dd>I2C Slave(0x42) · 스냅샷 레지스터 · DHT11 / HC-SR04 드라이버 · 테스트벤치</dd></div>
+    <div><dt>Stack</dt><dd>Verilog · Vivado 2020.2 · Basys3 · I2C 100kHz</dd></div>
+   </dl>
+   <div class="gallery single reveal">
+    <figure class="frame"><button type="button"><img src="img/p5_1.jpg" alt="실물 동작" loading="lazy"></button><figcaption data-n="Fig.1">Basys3 2대 실물 동작 — 온습도 표시 모드</figcaption></figure>
+   </div>
+   <div class="stats reveal">
+    <div class="stat"><small>Slave 테스트벤치</small><b>18 / 18</b><span>항목 통과</span></div>
+    <div class="stat"><small>타이밍 여유</small><b>+3.1ns</b><span>WNS · 100MHz</span></div>
+    <div class="stat"><small>실측 SCL</small><b>99.86kHz</b><span>9바이트 응답 확인</span></div>
+   </div>
+   <details><summary>구조 · 검증 자세히 보기<span class="ic"></span></summary><div class="detail">
+    <div><h4>Architecture</h4><ul>
+     <li>I2C START 순간 센서값을 스냅샷 — 8바이트를 읽는 동안 값이 섞이지 않음</li>
+     <li>SDA는 Low 또는 High-Z만 출력하는 오픈드레인으로 버스 충돌 방지</li>
+     <li>DHT11 체크섬 · 초음파 타임아웃 오류를 STATUS 비트로 따로 알림</li>
+    </ul></div>
+    <div class="prob"><p><b>방법</b><span>Master 버튼으로 1회 읽기 후 SDA · SCL을 오실로스코프로 캡처</span></p><p><b>결과</b><span>ID 0xA5 · 습도 36% · 온도 28.4℃ · 거리 3cm · STATUS 0x03이 레지스터 맵과 일치</span></p></div>
+    <figure class="frame"><button type="button"><img src="img/p5_4.jpg" alt="오실로스코프 파형" loading="lazy"></button><figcaption data-n="Fig.2">센서 읽기 1회 실측 파형 — 9바이트 (SCL 99.86kHz)</figcaption></figure>
+   </div></details>
+   <div class="foot"><a class="btn" href="https://github.com/Kyuhyeon34/FPGA_I2C_Sensor_Monitor" target="_blank" rel="noopener">GitHub · 시연 영상 ↗</a></div>
   </div>
-  <details><summary>구조 · 검증 자세히 보기</summary><div class="detail">
-   <div><h4>구조와 설계 의도</h4><ul>
-    <li>I2C START 순간 센서값을 스냅샷 — 8바이트를 읽는 동안 값이 섞이지 않음</li>
-    <li>SDA는 Low 또는 High-Z만 출력하는 오픈드레인으로 버스 충돌 방지</li>
-    <li>DHT11 체크섬 · 초음파 타임아웃 오류를 STATUS 비트로 따로 알림</li>
-   </ul></div>
-   <div class="prob"><p><b>방법</b> Master 버튼으로 1회 읽기 후 SDA · SCL을 오실로스코프로 캡처</p><p><b>결과</b> ID 0xA5 · 습도 36% · 온도 28.4℃ · 거리 3cm · STATUS 0x03이 레지스터 맵과 일치</p></div>
-   <figure><img src="img/p5_4.jpg" alt="오실로스코프 파형" loading="lazy"><figcaption>센서 읽기 1회 실측 파형 — 9바이트 (SCL 99.86kHz)</figcaption></figure>
-  </div></details>
-  <div class="foot"><a class="btn" href="https://github.com/Kyuhyeon34/FPGA_I2C_Sensor_Monitor" target="_blank" rel="noopener">GitHub · 시연 영상</a></div>
  </article>
 </div></section>
 
 <section id="more"><div class="wrap">
- <div class="eyebrow">More</div><h2>그 밖의 프로젝트</h2>
+ <div class="sec-head reveal">
+  <div><div class="eyebrow">More</div><h2>그 밖의 프로젝트</h2></div>
+  <p>개인으로 진행한 FPGA · MCU 프로젝트입니다.</p>
+ </div>
  <div class="more">
-  <a class="mini" href="https://github.com/Kyuhyeon34/FPGA_Microwave_Controller" target="_blank" rel="noopener" style="text-decoration:none">
-   <img src="img/p6_2.jpg" alt="전자레인지 FSM" loading="lazy">
-   <div><div class="eyebrow">06 · Verilog · 개인</div><h3>FSM 기반 전자레인지 제어 시스템</h3><p>시간 설정 · 문 · 모터 · 효과음을 FSM 하나로 통합, 테스트벤치 40개 항목 통과 · WNS +1.73ns</p></div>
-  </a>
-  <a class="mini" href="https://github.com/Kyuhyeon34/ATmega128a_AUTO_CAR" target="_blank" rel="noopener" style="text-decoration:none">
-   <img src="img/p7_4.jpg" alt="자율주행 RC카" loading="lazy">
-   <div><div class="eyebrow">07 · ATmega128A · 개인</div><h3>초음파 센서 기반 자율주행 RC카</h3><p>초음파 3개로 전방 40cm · 측면 20cm 기준 회피 주행, 블루투스 수동 모드 · FND 상태 표시</p></div>
-  </a>
+  <div class="mini reveal">
+   <figure class="frame fit"><button type="button"><img src="img/p6_2.jpg" alt="전자레인지 FSM" loading="lazy"></button></figure>
+   <div class="eyebrow" style="margin-top:20px">06 · Verilog · 개인</div>
+   <h3>FSM 기반 전자레인지 제어 시스템</h3>
+   <p>시간 설정 · 문 · 모터 · 효과음을 FSM 하나로 통합, 테스트벤치 40개 항목 통과 · WNS +1.73ns</p>
+   <a class="go" href="https://github.com/Kyuhyeon34/FPGA_Microwave_Controller" target="_blank" rel="noopener">GitHub ↗</a>
+  </div>
+  <div class="mini reveal">
+   <figure class="frame fit"><button type="button"><img src="img/p7_4.jpg" alt="자율주행 RC카" loading="lazy"></button></figure>
+   <div class="eyebrow" style="margin-top:20px">07 · ATmega128A · 개인</div>
+   <h3>초음파 센서 기반 자율주행 RC카</h3>
+   <p>초음파 3개로 전방 40cm · 측면 20cm 기준 회피 주행, 블루투스 수동 모드 · FND 상태 표시</p>
+   <a class="go" href="https://github.com/Kyuhyeon34/ATmega128a_AUTO_CAR" target="_blank" rel="noopener">GitHub ↗</a>
+  </div>
  </div>
 </div></section>
 
 <footer id="contact"><div class="wrap">
- <p><b style="color:var(--ink)">하드웨어를 이해하고, 소프트웨어로 완성하는 임베디드 SW 개발자 이규현</b></p>
- <p style="margin-top:6px"><a href="mailto:kyuhyeon34@gmail.com">kyuhyeon34@gmail.com</a> · <a href="https://github.com/Kyuhyeon34" target="_blank" rel="noopener">github.com/Kyuhyeon34</a></p>
+ <div class="eyebrow" style="color:#6fd3bf">Contact</div>
+ <h2 style="margin-top:16px">하드웨어를 이해하고,<br><em>소프트웨어로 완성하는</em> 개발자 이규현입니다.</h2>
+ <div class="cta">
+  <a class="btn dark" href="mailto:kyuhyeon34@gmail.com">kyuhyeon34@gmail.com</a>
+  <a class="btn" href="https://github.com/Kyuhyeon34" target="_blank" rel="noopener">github.com/Kyuhyeon34 ↗</a>
+ </div>
+ <div class="bottom"><span>© 2026 Lee Kyuhyeon</span><a href="#top" style="text-decoration:none">Back to top ↑</a></div>
 </div></footer>
+
+<dialog class="lb" id="lb"><button type="button" aria-label="닫기">×</button><img alt=""><p></p></dialog>
+
+<script>
+(function(){
+ var nav=document.getElementById('nav');
+ function onScroll(){nav.classList.toggle('scrolled',window.scrollY>8)}
+ onScroll();window.addEventListener('scroll',onScroll,{passive:true});
+
+ // reveal on scroll
+ var els=document.querySelectorAll('.reveal');
+ if('IntersectionObserver' in window){
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'});
+  els.forEach(function(el){io.observe(el)});
+ }else{els.forEach(function(el){el.classList.add('in')})}
+
+ // active nav link
+ var links=document.querySelectorAll('nav ul a');
+ var secs=[].map.call(links,function(a){return document.querySelector(a.getAttribute('href'))});
+ if('IntersectionObserver' in window){
+  var so=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id)})}})},{rootMargin:'-45% 0px -50% 0px'});
+  secs.forEach(function(s){s&&so.observe(s)});
+ }
+
+ // lightbox
+ var lb=document.getElementById('lb'),lbImg=lb.querySelector('img'),lbCap=lb.querySelector('p');
+ document.querySelectorAll('.frame button').forEach(function(b){
+  b.addEventListener('click',function(){
+   var img=b.querySelector('img'),cap=b.parentNode.querySelector('figcaption');
+   lbImg.src=img.src;lbImg.alt=img.alt;lbCap.textContent=cap?cap.textContent:img.alt;
+   if(lb.showModal)lb.showModal();else window.open(img.src,'_blank');
+  });
+ });
+ lb.addEventListener('click',function(e){if(e.target!==lbImg)lb.close()});
+})();
+</script>
 </body>
 </html>
